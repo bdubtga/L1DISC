@@ -1,0 +1,41 @@
+{
+  "config": {
+    "name": "Lord of the Rings Quizdjfhkjh",
+    "description": "This is a quiz about the Lord of the Rings!",
+    "author": "Benji Wallis",
+    "shuffle": false
+  },
+  "questions": [
+    {
+      "type": "choice",
+      "points": 5,
+      "question": "This is an example single choice question",
+      "correct": "correct answer",
+      "incorrect": [
+        "incorrect answer 1",
+        "incorrect answer 2",
+        "incorrect answer 3"
+      ]
+    },
+    {
+      "type": "multichoice",
+      "points": 10,
+      "question": "This is an example multichoice question",
+      "correct": [
+        "correct answer 1",
+        "correct answer 2"
+      ],
+      "incorrect": [
+        "incorrect answer 1",
+        "incorrect answer 2",
+        "incorrect answer 3"
+      ]
+    },
+    {
+      "type": "truefalse",
+      "points": 5,
+      "question": "This is an example true/false question",
+      "correct": "true"
+    }
+  ]
+}

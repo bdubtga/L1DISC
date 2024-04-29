@@ -1,8 +1,5 @@
 """Code to track and present spending over time."""
 
-#import libraries
-from word2number import w2n
-
 #initialise variables
 bank = 200
 expenses = [200]
@@ -12,12 +9,9 @@ while bank > 0:
   if spend == '0': # exit loop if 0 is entered
     break
   try: # convert to integer
-    try: # convert word to number
-      spend = w2n.word_to_num(spend)
-    except ValueError: # if not a word, try to convert to integer
       spend = int(spend)
   except ValueError: # if not a number, ask for a number
-    print('Please enter a number.')
+    print('That is not a valid transaction.')
     continue
   if spend < 0: # check for negative number
     print('You cannot spend a negative amount.')

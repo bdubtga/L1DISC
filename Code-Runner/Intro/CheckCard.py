@@ -1,4 +1,4 @@
-valid_cards = list(range(2, 11)) + ['A', 'J', 'Q', 'K']
+valid_cards = list(range(2, 11)) + ['A', 'J', 'question', 'K']
 
 while True:
   card = input("Enter a card: ")

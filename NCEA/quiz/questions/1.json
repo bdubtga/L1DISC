@@ -1,27 +1,55 @@
 {
-  "config": {
-    "name": "Lord of the Rings Quiz",
-    "description": "This is a quiz about the Lord of the Rings!",
-    "author": "Benji Wallis",
-    "shuffle": false
-  },
-  "questions": [
-    {
-      "type": "choice",
-      "points": 5,
-      "question": "Who is the author of 'The Lord of the Rings'?",
-      "correct": "J.R.R. Tolkien",
-      "incorrect": [
-        "George R.R. Martin",
-        "J.K. Rowling",
-        "C.S. Lewis"
-      ]
-    },
-    {
-      "type": "truefalse",
-      "points": 5,
-      "question": "Gollum was originally known as Sméagol.",
-      "correct": "true"
-    }
-  ]
+	"config": {
+		"name": "Lord of the Rings Quiz",
+		"description": "This is a quiz about the Lord of the Rings!",
+		"author": "Benji Wallis",
+		"shuffle": false
+	},
+	"questions": [
+		{
+			"type": "choice",
+			"points": 5,
+			"question": "Who is the author of 'The Lord of the Rings'?",
+			"correct": "J.R.R. Tolkien",
+      		"incorrect": [
+        		"George R.R. Martin",
+        		"J.K. Rowling",
+        		"C.S. Lewis"
+      		]
+		},
+		{
+			"type": "truefalse",
+			"points": 5,
+			"question": "Gollum was originally known as Sméagol.",
+			"correct": true
+		},
+		{
+			"type": "choice",
+			"points": 5,
+			"question": "What is the name of Gandalf's sword?",
+			"correct": "Glamdring",
+			"incorrect": [
+				"Sting",
+				"Anduril",
+				"Narsil"
+			]
+		},
+		{
+			"type": "truefalse",
+			"points": 5,
+			"question": "Aragorn is also known as Strider.",
+			"correct": true
+		},
+		{
+			"type": "choice",
+			"points": 5,
+			"question": "Which creature is not seen in the Shire?",
+			"correct": "Dwarves",
+			"incorrect": [
+				"Hobbits",
+				"Elves",
+				"Humans"
+			]
+		}
+	]
 }

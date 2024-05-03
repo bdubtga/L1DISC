@@ -22,9 +22,9 @@ def check_terminal_size():
 # Load quiz data fron json files in the questions folder.
 def load_quizzes():
     quizzes = {}
-    current_dir = os.path.dirname(os.path.realpath(__file__)) # get the current directory
-    questions_dir = os.path.join(current_dir, "questions") # get the questions directory
-    for filename in os.listdir(questions_dir): # loop through the files in the questions directory
+    current_dir = os.path.dirname(os.path.realpath(__file__))
+    questions_dir = os.path.join(current_dir, "questions")
+    for filename in os.listdir(questions_dir):
         if filename.endswith(".json"):
             with open(os.path.join(questions_dir, filename)) as json_data:
                 quizzes[os.path.splitext(filename)[0]] = json.load(json_data)
@@ -36,8 +36,10 @@ def quiz_selection(quizzes):
     os.system("clear")
     print_buffer(5)
     print('Select a quiz or type "quit" to exit:\n')
+    quiz_dict = {}
     for question in quizzes:
         print(f'{question}: {quizzes[question]["config"]["name"]}')
+        quiz_dict[quizzes[question]["config"]["name"].lower()] = question
     print("quit: Exit the program")
     quiz = input("\nQuiz: ")
     if quiz.lower() == "quit":
@@ -46,6 +48,9 @@ def quiz_selection(quizzes):
     elif quiz.lower() in quizzes:
         os.system("clear")
         return quiz
+    elif quiz.lower() in quiz_dict:
+        os.system("clear")
+        return quiz_dict[quiz]
     return quiz_selection(quizzes)
 
 # Display the quiz instructions and start the quiz.
@@ -116,7 +121,7 @@ def start_quiz(quiz, quizzes):
                 try:  # check if answer is correct corresponding number
                     answer = int(answer)
                     if 1 <= answer <= len(choices):
-                        if choices[answer - 1] == question["correct"].lower():
+                        if choices[answer - 1].lower() == question["correct"].lower():
                             print_answer(True, question["question"], question["correct"])
                             points += 1
                         else:
@@ -125,15 +130,26 @@ def start_quiz(quiz, quizzes):
                     print(f"Enter a number between 1 and {len(choices)}")
                 except ValueError:  # print error for invalid input
                     print("Enter a valid number.")
-
+                    
         # Handle true/false questions.
         elif question["type"] == "truefalse":
-            answer = input("\nAnswer (true/false): ").lower()
-            if answer == question["correct"].lower():
-                print_answer(True, question["question"], question["correct"])
-                points += 1
-            else:
-                print_answer(False, question["question"], question["correct"])
+            while True:
+                answer = input("\nAnswer (true/false): ").lower()
+                # Accept 't' and 'f' as valid inputs
+                if answer in ['t', 'true']:
+                    answer = True
+                elif answer in ['f', 'false']:
+                    answer = False
+                else:
+                    print("Invalid input. Please enter true/false or t/f.")
+                    continue
+
+                if answer == question["correct"]:
+                    print_answer(True, question["question"], question["correct"])
+                    points += 1
+                else:
+                    print_answer(False, question["question"], question["correct"])
+                break
 
         # Handle short answer questions.
         elif question["type"] == "shortanswer":

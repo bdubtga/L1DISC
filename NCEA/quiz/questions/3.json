@@ -1,41 +1,43 @@
 {
-  "config": {
-    "name": "Lord of the Rings Quizdjfhkjh",
-    "description": "This is a quiz about the Lord of the Rings!",
-    "author": "Benji Wallis",
-    "shuffle": false
-  },
-  "questions": [
-    {
-      "type": "choice",
-      "points": 5,
-      "question": "This is an example single choice question",
-      "correct": "correct answer",
-      "incorrect": [
-        "incorrect answer 1",
-        "incorrect answer 2",
-        "incorrect answer 3"
-      ]
-    },
-    {
-      "type": "multichoice",
-      "points": 10,
-      "question": "This is an example multichoice question",
-      "correct": [
-        "correct answer 1",
-        "correct answer 2"
-      ],
-      "incorrect": [
-        "incorrect answer 1",
-        "incorrect answer 2",
-        "incorrect answer 3"
-      ]
-    },
-    {
-      "type": "truefalse",
-      "points": 5,
-      "question": "This is an example true/false question",
-      "correct": "true"
-    }
-  ]
+	"config": {
+		"name": "Finding Nemo Quiz",
+		"description": "Test your knowledge about the Disney-Pixar movie 'Finding Nemo'!",
+		"author": "Benji Wallis",
+		"shuffle": false
+	},
+	"questions": [
+		{
+			"type": "choice",
+			"points": 5,
+			"question": "Who directed the movie 'Finding Nemo'?",
+			"correct": "Andrew Stanton & Lee Unkrich",
+			"options": ["Andrew Stanton", "Pete Docter", "Brad Bird"]
+		},
+		{
+			"type": "truefalse",
+			"points": 5,
+			"question": "Nemo is a clownfish.",
+			"correct": true
+		},
+		{
+			"type": "choice",
+			"points": 5,
+			"question": "What is the name of Nemo's father?",
+			"correct": "Marlin",
+			"options": ["Gill", "Marlin", "Crush"]
+		},
+		{
+			"type": "truefalse",
+			"points": 5,
+			"question": "Dory suffers from short-term memory loss.",
+			"correct": true
+		},
+		{
+			"type": "choice",
+			"points": 5,
+			"question": "What is the name of the dentist's niece who helps Nemo escape?",
+			"correct": "Darla",
+			"options": ["Coral", "Deb", "Peach"]
+		}
+	]
 }

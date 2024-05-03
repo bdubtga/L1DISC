@@ -1,41 +1,43 @@
 {
-  "config": {
-    "name": "Lord of the Rings Quizdjfhkjh",
-    "description": "This is a quiz about the Lord of the Rings!",
-    "author": "Benji Wallis",
-    "shuffle": false
-  },
-  "questions": [
-    {
-      "type": "choice",
-      "points": 5,
-      "question": "This is an example single choice question",
-      "correct": "correct answer",
-      "incorrect": [
-        "incorrect answer 1",
-        "incorrect answer 2",
-        "incorrect answer 3"
-      ]
-    },
-    {
-      "type": "multichoice",
-      "points": 10,
-      "question": "This is an example multichoice question",
-      "correct": [
-        "correct answer 1",
-        "correct answer 2"
-      ],
-      "incorrect": [
-        "incorrect answer 1",
-        "incorrect answer 2",
-        "incorrect answer 3"
-      ]
-    },
-    {
-      "type": "truefalse",
-      "points": 5,
-      "question": "This is an example true/false question",
-      "correct": "true"
-    }
-  ]
+	"config": {
+		"name": "Moana Quiz",
+		"description": "Test your knowledge about the Disney movie 'Moana'!",
+		"author": "Benji Wallis",
+		"shuffle": false
+	},
+	"questions": [
+		{
+			"type": "choice",
+			"points": 5,
+			"question": "Who composed the music for the movie 'Moana'?",
+			"correct": "Lin-Manuel Miranda",
+			"incorrect": ["Alan Menken", "Hans Zimmer", "Howard Ashman"]
+		},
+		{
+			"type": "truefalse",
+			"points": 5,
+			"question": "The character Maui has a magical fishhook.",
+			"correct": true
+		},
+		{
+			"type": "choice",
+			"points": 5,
+			"question": "What is the name of Moana's pet rooster?",
+			"correct": "Heihei",
+			"incorrect": ["Pua", "Tala", "Kakamora"]
+		},
+		{
+			"type": "truefalse",
+			"points": 5,
+			"question": "Moana's grandmother is the one who teaches her about wayfinding.",
+			"correct": true
+		},
+		{
+			"type": "choice",
+			"points": 5,
+			"question": "What is the name of the island where Moana lives?",
+			"correct": "Motunui",
+			"options": ["Lalotai", "Te Fiti", "Tefiti"]
+		}
+	]
 }

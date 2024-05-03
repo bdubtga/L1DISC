@@ -11,7 +11,7 @@
 			"points": 5,
 			"question": "Who directed the movie 'Finding Nemo'?",
 			"correct": "Andrew Stanton & Lee Unkrich",
-			"options": ["Andrew Stanton", "Pete Docter", "Brad Bird"]
+			"incorrect": ["Andrew Stanton", "Pete Docter", "Brad Bird"]
 		},
 		{
 			"type": "truefalse",
@@ -24,7 +24,7 @@
 			"points": 5,
 			"question": "What is the name of Nemo's father?",
 			"correct": "Marlin",
-			"options": ["Gill", "Marlin", "Crush"]
+			"incorrect": ["Gill", "Marlin", "Crush"]
 		},
 		{
 			"type": "truefalse",
@@ -37,7 +37,7 @@
 			"points": 5,
 			"question": "What is the name of the dentist's niece who helps Nemo escape?",
 			"correct": "Darla",
-			"options": ["Coral", "Deb", "Peach"]
+			"incorrect": ["Coral", "Deb", "Peach"]
 		}
 	]
 }

@@ -16,10 +16,9 @@ def print_buffer(lines):
 # Check if the terminal is large enough to display the quiz nicely.
 def check_terminal_size():
     if (
-        os.get_terminal_size().columns < 100
-        or os.get_terminal_size().lines < 20
+        os.get_terminal_size().lines < 20
     ):
-        print("Terminal too small")
+        print("Please enlarge your terminal window for optimal viewing and interaction.")
         exit()
 
 # Load quiz data fron json files in the questions folder.

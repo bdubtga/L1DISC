@@ -6,6 +6,9 @@ import time
 import json
 import random
 
+def clear_terminal():
+    os.system("cls" if os.name == "nt" else "clear")
+
 # Function to print a buffer of lines (used for looks).
 def print_buffer(lines):
     print("\n" * lines)
@@ -33,7 +36,7 @@ def load_quizzes():
     return quizzes
 # Ask user to select a quiz or exit the program.
 def quiz_selection(quizzes):
-    os.system("clear")
+    clear_terminal()
     print_buffer(5)
     print('Select a quiz or type "quit" to exit:\n')
     quiz_dict = {}
@@ -43,19 +46,19 @@ def quiz_selection(quizzes):
     print("quit: Exit the program")
     quiz = input("\nQuiz: ")
     if quiz.lower() == "quit":
-        os.system("clear")
+        clear_terminal()
         exit()
     elif quiz.lower() in quizzes:
-        os.system("clear")
+        clear_terminal()
         return quiz
     elif quiz.lower() in quiz_dict:
-        os.system("clear")
+        clear_terminal()
         return quiz_dict[quiz]
     return quiz_selection(quizzes)
 
 # Display the quiz instructions and start the quiz.
 def instructions(quiz, quizzes):
-    os.system("clear")
+    clear_terminal()
     print_buffer(2)
     config = quizzes[quiz]["config"]
     print(
@@ -67,7 +70,7 @@ def instructions(quiz, quizzes):
         "and pressing enter"
     )
     input("Press enter to start")
-    os.system("clear")
+    clear_terminal()
     return quiz
 
 # Function to run quiz.
@@ -76,14 +79,14 @@ def start_quiz(quiz, quizzes):
     # Function to print answer after user input.
     def print_answer(status, question, correct_answer):
         if status:
-            os.system("clear")
+            clear_terminal()
             print_buffer(2)
             print(question)
             print("Correct")
             print_buffer(2)
             input("Press enter to continue")
         else:
-            os.system("clear")
+            clear_terminal()
             print_buffer(2)
             print(question)
             print("Incorrect")
@@ -101,7 +104,7 @@ def start_quiz(quiz, quizzes):
     for question in quizzes[quiz]["questions"]:
         
         # Display question and options.
-        os.system("clear")
+        clear_terminal()
         print(f"Score: {points}/{len(quizzes[quiz]['questions'])}")
         print_buffer(2)
         print(f"{question['question']}\n")
@@ -162,7 +165,7 @@ def start_quiz(quiz, quizzes):
 
     # print results with option to exit and to do antoher 
     # one and print the score with percentage and quiz name
-    os.system("clear")
+    clear_terminal()
     print_buffer(2)
     print(f"Score: {points}/{len(quizzes[quiz]['questions'])}")
     print(f"Percentage: {points / len(quizzes[quiz]['questions']) * 100}%")
@@ -174,7 +177,7 @@ def start_quiz(quiz, quizzes):
     start_quiz(selected_quiz, quizzes)
 
 # Run the program.
-os.system("clear")
+clear_terminal()
 check_terminal_size()
 quizzes = load_quizzes()
 selected_quiz = quiz_selection(quizzes)
